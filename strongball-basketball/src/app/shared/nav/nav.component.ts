@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output  } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './nav.component.scss'
 })
 export class NavComponent {
+  @Output() onCloseSidenav: EventEmitter<boolean> = new EventEmitter();
 
+  close(){
+    this.onCloseSidenav.emit(true);
+  }
 }

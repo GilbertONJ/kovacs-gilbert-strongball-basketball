@@ -1,0 +1,26 @@
+span{
+    margin-left: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+a {
+    margin-top: 5vh;
+    position: relative;
+}
+
+a:hover{
+    background-color: darkgray;
+}
+
+mat-nav-list{
+    background-color: rgb(131, 34, 34);
+    height: 100vh;
+    overflow: hidden;
+}
+
+mat-icon{
+    color: white;
+}

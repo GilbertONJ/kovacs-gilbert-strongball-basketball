@@ -1,1 +1,9 @@
-<p>nav works!</p>
+<mat-nav-list>
+    <a mat-list-item routerLink="/login" (click)="close()"><mat-icon>login</mat-icon><span>login</span></a>
+    <a mat-list-item routerLink="/signUp" (click)="close()"><mat-icon>add circle</mat-icon><span>Sign Up</span></a>  
+    <a mat-list-item routerLink="/home" (click)="close()"><mat-icon>home</mat-icon><span>Home</span></a> 
+    <a mat-list-item routerLink="/teams" (click)="close()"><mat-icon>groups</mat-icon><span>Teams</span></a>
+    <a mat-list-item routerLink="/stats" (click)="close()"><mat-icon>monitoring</mat-icon><span>Stats</span></a>
+    <a mat-list-item routerLink="/standings" (click)="close()"><mat-icon>star half</mat-icon><span>Standings</span></a>
+  </mat-nav-list>
+  
