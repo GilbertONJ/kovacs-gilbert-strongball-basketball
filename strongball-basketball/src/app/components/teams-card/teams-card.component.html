@@ -1,1 +1,18 @@
-<p>teams-card works!</p>
+<div class="card-container">
+    <div class="modal-header">
+      <h4 class="modal-title">{{ full_name }}</h4>
+  
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="activeModal.dismiss('Cross click')"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <div> {{ win }}</div>
+      <div> {{ lose }}</div>
+      <div> {{ best_player }}</div>
+    </div>
+  </div>
+  
