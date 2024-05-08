@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kg-strongball": {
+      "hosting": {
+        "strongball-basketball": [
+          "kg-strongball"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kg-strongball"
+  }
+}

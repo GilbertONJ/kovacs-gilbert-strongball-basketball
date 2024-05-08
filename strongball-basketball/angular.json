@@ -103,6 +103,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "strongball-basketball:build:production",
+              "serveTarget": "strongball-basketball:serve:production"
+            },
+            "development": {
+              "buildTarget": "strongball-basketball:build:development",
+              "serveTarget": "strongball-basketball:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "strongball-basketball",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

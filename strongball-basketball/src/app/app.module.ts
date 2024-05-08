@@ -13,6 +13,10 @@ import { MatIconModule} from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatListModule } from '@angular/material/list';
 import { TeamsCardComponent } from  '../app/components/teams-card/teams-card.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +32,11 @@ import { TeamsCardComponent } from  '../app/components/teams-card/teams-card.com
     MatIconModule,
     FlexLayoutModule,
     MatListModule,
-    NgbModule
+    NgbModule,
+    provideFirebaseApp(() => initializeApp({"projectId":"kg-strongball","appId":"1:199255983025:web:a822c0f695047ed2df3390","storageBucket":"kg-strongball.appspot.com","apiKey":"AIzaSyAshmV66PJxFmXt54aHHu5D_ZIz1LSnQyU","authDomain":"kg-strongball.firebaseapp.com","messagingSenderId":"199255983025","measurementId":"G-VZD9Y130F2"})),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage())
   ],
   providers: [
     provideAnimationsAsync()
