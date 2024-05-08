@@ -1,1 +1,47 @@
 <p>home works!</p>
+<div class="home_container">
+    <div class="header_container">
+      <img src="../../../assets/logos/logo.png" />
+    </div>
+    <div class="team_container">
+      <table class="visible">
+        <tr>
+          <ng-container *ngFor="let obj of teamObject; let i = index;">
+            <ng-container *ngIf="i < 4">
+              <td><img (click)="getTeam(obj.id)" id ="{{obj.id}}" src="../../../assets/team_logos/{{obj.name}}.png"></td>
+            </ng-container>
+          </ng-container>
+        </tr>
+        <tr>
+          <ng-container *ngFor="let obj of teamObject; let i = index;">
+            <ng-container *ngIf="i < 4">
+              <td>{{obj.full_name}}</td>
+            </ng-container>
+          </ng-container>
+        </tr>
+        <tr>
+          <ng-container *ngFor="let obj of teamObject; let i = index;">
+            <ng-container  *ngIf="i >= 4 && i < 8">
+              <td><img (click)="getTeam(obj.id)" id="{{obj.id}}" src="../../../assets/team_logos/{{obj.name}}.png"></td>
+            </ng-container>
+          </ng-container>
+        </tr>
+        <tr>
+          <ng-container *ngFor="let obj of teamObject; let i = index;">
+            <ng-container *ngIf="i >= 4 && i < 8">
+              <td>{{obj.full_name}}</td>
+            </ng-container>
+          </ng-container>
+        </tr>
+      </table>
+      <div class="responsivTeams">
+        <ul>
+          <ng-container *ngFor="let obj of teamObject; let i = index;">
+          <li (click)="getTeam(obj.id)" class="place" id="{{obj.id}}">{{obj.full_name}}</li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </div>
+  
