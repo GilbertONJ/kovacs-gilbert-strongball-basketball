@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavComponent } from './shared/nav/nav.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,12 @@ import { NavComponent } from './shared/nav/nav.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
