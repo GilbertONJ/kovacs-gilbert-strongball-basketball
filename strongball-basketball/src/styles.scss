@@ -5,3 +5,24 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+.modal-dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40vh;
+  }
+  
+  .modal-title {
+    font-size: 1.125rem;
+    font-weight: bolder;
+  }
+
+  
+  
+  @media only screen and (max-width: 1250px) {
+    .modal-dialog{
+      font-size: 0.625rem;
+    }
+  }
