@@ -35,7 +35,7 @@ import { AngularFireModule } from '@angular/fire/compat';
     FlexLayoutModule,
     MatListModule,
     NgbModule,
-    AngularFireModule,
+    AngularFireModule.initializeApp(environment.firebase),
     //provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
