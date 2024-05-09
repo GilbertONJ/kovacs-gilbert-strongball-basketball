@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    overflow-x: hidden;
+  }
+  
+  .teams-container {
+    margin: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-head {
+    background-color: #454141;
+    color: white;
+    font-weight: bolder;
+  }
+  
+  .table-head th {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .table-body tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .table-body tr:nth-child(odd) {
+    background-color: #969393;
+  }
+  
+  .table-body td {
+    padding: 10px;
+  }
+  
+
+  .table-body tr:hover {
+    background-color: #e38585;
+  }
+  
+
+  .mat-sort-header-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .mat-sort-header-arrow {
+    margin-left: 5px;
+  }
+  
+ 
+  @media screen and (max-width: 600px) {
+    .table-head {
+      display: none;
+    }
+    .table-body td {
+      display: block;
+      padding: 10px 0;
+      border-bottom: 1px solid #ccc;
+    }
+    .table-body td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      width: 50%;
+      float: left;
+    }
+  }
+  
