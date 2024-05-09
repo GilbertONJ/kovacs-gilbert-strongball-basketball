@@ -1,0 +1,16 @@
+<div class="teams-container">
+    <table>
+        <tr>
+            <th>Team name</th>
+            <th>Wins</th>
+            <th>Loses</th>
+            <th>Player of the team</th>
+        </tr>
+        <tr *ngFor="let obj of teamobject;">
+                <td>{{obj.full_name}}</td>
+                <td>{{obj.win}}</td>
+                <td>{{obj.lose}}</td>
+                <td>{{obj.best_player}}</td>
+        </tr>
+    </table>
+</div>
