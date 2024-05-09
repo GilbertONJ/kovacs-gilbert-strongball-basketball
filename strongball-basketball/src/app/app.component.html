@@ -1,6 +1,6 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav>
-      <app-nav (onCloseSidenav)="onClose($event, sidenav)"></app-nav>
+      <app-nav (onCloseSidenav)="onClose($event, sidenav)" [currentUser]="currentUser" (onLogout)="logout($event)"></app-nav>
   </mat-sidenav>
 <mat-sidenav-content>
   <mat-toolbar color="primary">
@@ -24,10 +24,10 @@
         <li>
           <a routerLink="/teams">Teams</a>
         </li>
-        <li>
+        <li *ngIf="!(currentUser)">
           <a routerLink="/login">Login</a>
         </li>
-        <li>
+        <li *ngIf="(currentUser)">
           <a routerLink="/login" (click)="logout()">Logout</a>
         </li>
         <li>

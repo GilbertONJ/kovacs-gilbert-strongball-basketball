@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { AuthService } from './shared/services/auth.service';
 
@@ -7,10 +7,21 @@ import { AuthService } from './shared/services/auth.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'strongball-basketball';
+  currentUser?: firebase.default.User | null;
 
+  
+  
   constructor(private authservice: AuthService){}
+  
+  ngOnInit(){
+    this.authservice.isLoggedIn().subscribe(user => {
+      this.currentUser = user;
+    }, error => {
+
+    });
+  }
 
   toogle(sidenav: MatSidenav){
     sidenav.toggle();
@@ -22,7 +33,12 @@ export class AppComponent {
     }
   }
 
-  logout() {
-    
+  logout(_?: boolean) {
+    this.authservice.logout().then( () => {
+
+    }).catch(error => {
+
+    });
   }
+
 }
