@@ -1,16 +1,23 @@
 <div class="teams-container">
-    <table>
-        <tr>
-            <th>Team name</th>
-            <th>Wins</th>
-            <th>Loses</th>
-            <th>Player of the team</th>
-        </tr>
-        <tr *ngFor="let obj of teamobject;">
-                <td>{{obj.full_name}}</td>
-                <td>{{obj.win}}</td>
-                <td>{{obj.lose}}</td>
-                <td>{{obj.best_player}}</td>
-        </tr>
-    </table>
+  <table matSort (matSortChange)="sortData($event)">
+    <thead class="table-head">
+      <tr>
+        <th mat-sort-header="teamName">Team name</th>
+        <th mat-sort-header="wins">Wins</th>
+        <th mat-sort-header="loses">Loses</th>
+        <th mat-sort-header="bestPlayer">Player of the team</th>
+      </tr>
+    </thead>
+
+    <tbody class="table-body">
+      @for (teams of sortedData; track teams) {
+      <tr>
+        <td>{{ teams.teamName }}</td>
+        <td>{{ teams.wins }}</td>
+        <td>{{ teams.loses }}</td>
+        <td>{{ teams.bestPlayer }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
 </div>

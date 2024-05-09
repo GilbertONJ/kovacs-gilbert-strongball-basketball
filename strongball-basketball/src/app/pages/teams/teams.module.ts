@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { MatSortModule, MatSort} from '@angular/material/sort';
 import { TeamsRoutingModule } from './teams-routing.module';
 import { TeamsComponent } from './teams.component';
+
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { TeamsComponent } from './teams.component';
   ],
   imports: [
     CommonModule,
-    TeamsRoutingModule
+    TeamsRoutingModule,
+    MatSort,
+    MatSortModule,
   ]
 })
 export class TeamsModule { }
