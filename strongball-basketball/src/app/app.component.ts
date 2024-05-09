@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,8 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class AppComponent {
   title = 'strongball-basketball';
 
+  constructor(private authservice: AuthService){}
+
   toogle(sidenav: MatSidenav){
     sidenav.toggle();
   }
@@ -17,5 +20,9 @@ export class AppComponent {
     if(event === true){
       sidenav.close();
     }
+  }
+
+  logout() {
+    
   }
 }

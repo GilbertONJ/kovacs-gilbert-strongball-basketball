@@ -23,7 +23,7 @@ export class LoginComponent {
 
   async login(){
     this.loading = true;
-    this.authservice.login(this.loginForm.value.email as string, this.loginForm.value.password as string).then(cred => {
+    this.authservice.login(this.loginForm.get('email')?.value as string, this.loginForm.get('password')?.value as string).then(cred => {
       this.router.navigate(['/home']);
       this.loading = false;
     }).catch(error => {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,8 +14,13 @@ export class SignUpComponent {
     rePassword: new FormControl('')
   });
 
+  constructor(private authservice: AuthService){}
 
   register(){
-    
+    this.authservice.signUp(this.signUpForm.get('email')?.value as string, this.signUpForm.get('password')?.value as string).then(cred => {
+      
+    }).catch(error => {
+      
+    });
   }
 }
