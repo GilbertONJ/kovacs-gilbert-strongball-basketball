@@ -3,13 +3,12 @@
     {
       "target": "strongball-basketball",
       "public": "dist/strongball-basketball",
-      "frameworksBackend": {}
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "**",
-      "destination": "/index.html"
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     }
   ]
 }
