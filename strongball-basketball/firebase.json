@@ -2,13 +2,13 @@
   "hosting": [
     {
       "target": "strongball-basketball",
-      "public": "dist/strongball-basketball",
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
+      "public": "dist/strongball-basketball/browser"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "**",
+      "destination": "/index.html"
     }
   ]
 }
