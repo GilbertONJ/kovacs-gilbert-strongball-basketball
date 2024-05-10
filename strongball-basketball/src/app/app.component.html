@@ -13,13 +13,13 @@
     <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
       <ul fxLayout fxLayoutGap="15px" class="navigation">
         <li>
-          <a routerLink="/home">Home</a>
+          <a routerLink="/home" [ngClass]="{'hidden': currentUser == null}">Home</a>
         </li>
         <li>
-          <a routerLink="/news">News</a>
+          <a routerLink="/news" [ngClass]="{'hidden': currentUser == null}">News</a>
         </li>
         <li>
-          <a routerLink="/teams">Team stats</a>
+          <a routerLink="/teams" [ngClass]="{'hidden': currentUser == null}">Team stats</a>
         </li>
         <li *ngIf="!(currentUser)">
           <a routerLink="/login">Login</a>
@@ -28,7 +28,7 @@
           <a routerLink="/login" (click)="logout()">Logout</a>
         </li>
         <li>
-          <a routerLink="/signUp">Sign up</a>
+          <a routerLink="/signUp" [ngClass]="{'hidden': currentUser != null}">Sign up</a>
         </li>
       </ul>
     </div>

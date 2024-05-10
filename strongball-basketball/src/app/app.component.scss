@@ -18,6 +18,10 @@ li{
     margin: 0;
 }
 
+.hidden{
+    display: none;
+  }
+
 mat-sidenav{
     position: fixed;
     height: 100vh;
