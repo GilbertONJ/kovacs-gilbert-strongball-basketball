@@ -7,5 +7,7 @@ export const environment = {
         authDomain: "kg-strongball.firebaseapp.com",
         messagingSenderId: "199255983025",
         measurementId: "G-VZD9Y130F2"
-    }
+    },
+    production: false,
+    hostUrl: 'https://localhost:4200'
 }
