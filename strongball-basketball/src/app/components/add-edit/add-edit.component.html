@@ -1,1 +1,21 @@
-<p>add-edit works!</p>
+<div style="overflow-x: hidden;">
+  <div mat-dialog-title>
+    <h1 style="text-align: center">News Form</h1>
+  </div>
+  <div mat-dialog-content class="content">
+    <div class="row">
+        <mat-form-field appearance="fill">
+          <mat-label>Your name</mat-label>
+          <input matInput type="text" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Your thoughts</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="accent">Cancel</button>
+    <button mat-raised-button color="accent">Add</button>
+  </div>
+</div>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddEditComponent } from '../../components/add-edit/add-edit.component';
 
 @Component({
   selector: 'app-news',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class NewsComponent {
 
+  constructor(private _dialog: MatDialog){}
+
+  openAddEditForm() {
+    this._dialog.open(AddEditComponent);
+  }
 }
