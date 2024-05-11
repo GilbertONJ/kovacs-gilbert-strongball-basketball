@@ -17,4 +17,9 @@ export class CrudService {
   getAllNews(){
     return this.fireStore.collection<News>('News').valueChanges();
   }
+
+  deleteNews(date: string){
+    return this.fireStore.collection<News>('News').doc(date).delete();
+  }
+  
 }

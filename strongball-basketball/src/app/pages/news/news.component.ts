@@ -7,6 +7,7 @@ import { News } from '../../shared/modals/news';
 
 
 
+
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -20,6 +21,18 @@ export class NewsComponent implements OnInit, OnDestroy{
 
   openAddEditForm() {
     this._dialog.open(AddEditComponent);
+  }
+
+  getCurrentUserEmail(){
+    return JSON.parse(localStorage.getItem('user') as string).email;
+  }
+
+  delete(date: string){
+    this.crud.deleteNews(date).then(_ => {
+
+    }).catch(error => {
+      console.error(error);
+    });
   }
 
   ngOnInit(){

@@ -12,6 +12,8 @@
     <tr *ngFor="let obj of news">
       <td>{{obj.name}}</td>
       <td>{{obj.text}}</td>
+      <td><mat-icon *ngIf="obj.name == getCurrentUserEmail()">edit</mat-icon></td>
+      <td><mat-icon *ngIf="obj.name == getCurrentUserEmail()" (click)="delete(obj.date)">delete</mat-icon></td>
     </tr>
   </table>
 </div>

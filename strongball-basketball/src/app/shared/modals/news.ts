@@ -1,4 +1,5 @@
 export interface News {
     name: string,
-    text: string
+    text: string,
+    date: string
 }

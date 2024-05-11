@@ -22,12 +22,13 @@ export class AddEditComponent {
 
   onFormSubmit(){
     if(this.newsForm.valid){
+      let date: Date = new Date();
       this.obj = {
         name: JSON.parse(localStorage.getItem('user') as string).email as string,
-        text: this.newsForm.value.text
+        text: this.newsForm.value.text,
+        date: this.datePipe.transform(date, 'yyyy-MM-dd HH:mm-ss') as string
       }
-      let date: Date = new Date();
-      this.crud.createNews(this.obj, this.datePipe.transform(date, 'yyyy-MM-dd HH:mm-ss') as string).then(_ => {
+      this.crud.createNews(this.obj, this.obj.date).then(_ => {
 
       }).catch(error => {
         console.error(error);
