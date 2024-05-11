@@ -1,3 +1,17 @@
 <div class="add">
-    <button mat-flat-button color="accent" (click)="openAddEditForm()">Writing news</button>
+  <button mat-flat-button color="accent" (click)="openAddEditForm()">
+    Writing news
+  </button>
+</div>
+<div class="">
+  <table>
+    <tr>
+      <th>Email</th>
+      <th>News</th>
+    </tr>
+    <tr *ngFor="let obj of news">
+      <td>{{obj.name}}</td>
+      <td>{{obj.text}}</td>
+    </tr>
+  </table>
 </div>
