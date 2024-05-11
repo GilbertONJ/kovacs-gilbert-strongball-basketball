@@ -35,6 +35,12 @@ const routes: Routes = [
       import('./pages/teams/teams.module').then((m) => m.TeamsModule),
     canActivate: [authGuard],
   },
+  {
+    path: 'news',
+    loadChildren: () =>
+      import('./pages/news/news.module').then((m) => m.NewsModule),
+    canActivate: [authGuard],
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
