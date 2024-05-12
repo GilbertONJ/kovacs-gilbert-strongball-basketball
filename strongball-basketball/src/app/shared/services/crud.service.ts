@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore} from '@angular/fire/compat/firestore'
 import { News } from '../modals/news';
+import { ref } from '@angular/fire/storage';
 
 
 @Injectable({
@@ -22,4 +23,7 @@ export class CrudService {
     return this.fireStore.collection<News>('News').doc(date).delete();
   }
   
+  getMyNews(){
+    return this.fireStore.collection<News>('News', ref => ref.where('name', '==', JSON.parse(localStorage.getItem('user') as string).email)).valueChanges();
+  }
 }
