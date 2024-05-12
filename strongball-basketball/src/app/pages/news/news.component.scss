@@ -9,8 +9,15 @@
     transition: background-color 0.3s ease;
     margin-top: 5vh;
     margin-bottom: 5vh;
-    margin-left: 41.5vw;
   }
+
+  .add{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   
   .add button:hover {
     background-color: #d81b60;
@@ -89,3 +96,9 @@
     width: 15vw;
   }
   
+  @media only screen and (max-width: 800px){
+    button{
+      width: 20vw !important;
+      font-size: 0.9375rem !important;
+    }
+  }
