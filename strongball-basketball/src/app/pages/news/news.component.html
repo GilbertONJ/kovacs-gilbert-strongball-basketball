@@ -8,6 +8,8 @@
     <tr>
       <th>Email</th>
       <th>News</th>
+      <th>Edit mode</th>
+      <th>Delet mode</th>
     </tr>
     <tr *ngFor="let obj of news">
       <td>{{ obj.name }}</td>
@@ -29,14 +31,16 @@
     </tr>
   </table>
   <div *ngIf="this.editedNewsKey !== ''">
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="area">
       <mat-label>Your thoughts</mat-label>
       <textarea #textValue matInput type="text">{{ this.editedNews }}</textarea>
     </mat-form-field>
+    <div class="buttons">
     <button mat-raised-button color="accent" (click)="cancel()">Cancel</button>
     <button mat-raised-button color="primary" (click)="update(textValue.value)">Update</button>
   </div>
-  <div>
+  </div>
+  <div class="filter-button">
     <button mat-raised-button color="accent" (click)="getMyNews()">My own news</button>
     <button mat-raised-button color="accent" (click)="getAllNews()">Delete Filter</button>
   </div>
